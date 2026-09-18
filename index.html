@@ -1,463 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="RDAE 2027 - International Conference on Research and Developments in Aeronautical Engineering, Annasaheb Dange College of Engineering and Technology, Ashta.">
-<title>RDAE 2027 | International Conference on Aeronautical Engineering</title>
-<style>
-:root{
-  --navy:#082b5c;
-  --blue:#0d4d9b;
-  --sky:#eaf3ff;
-  --gold:#d7a63d;
-  --ink:#152238;
-  --muted:#667085;
-  --line:#dbe3ee;
-  --white:#fff;
-  --soft:#f7f9fc;
-  --accent:#c21f3a;
-  --shadow:0 14px 35px rgba(11,37,73,.10);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
-a{text-decoration:none;color:inherit}
-.container{width:min(1180px,92%);margin:auto}
-.topbar{background:var(--navy);color:#dce9ff;font-size:.83rem;padding:8px 0}
-.topbar .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;color:white;font-weight:800;letter-spacing:-1px}
-.brand-text strong{display:block;color:var(--navy);font-size:1rem;letter-spacing:.04em}
-.brand-text span{font-size:.74rem;color:var(--muted)}
-.nav-links{display:flex;align-items:center;gap:21px;font-size:.9rem;font-weight:600;color:#344054}
-.nav-links a:hover{color:var(--blue)}
-.menu-btn{display:none;border:1px solid var(--line);background:white;padding:9px 12px;border-radius:8px;font-size:1rem}
-
-.hero{min-height:670px;color:white;position:relative;overflow:hidden;background:
-radial-gradient(circle at 75% 30%,rgba(38,116,205,.45),transparent 32%),
-linear-gradient(115deg,rgba(3,25,55,.98),rgba(8,43,92,.94) 58%,rgba(13,77,155,.88)),
-url('YOUR-HERO-IMAGE.jpg') center/cover}
-.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent)}
-.hero-inner{position:relative;min-height:670px;display:grid;align-items:center;padding:70px 0}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.13em;font-size:.75rem;font-weight:800;color:#f4c766}
-.eyebrow:before{content:"";width:34px;height:2px;background:var(--gold)}
-.hero h1{font-family:Georgia,serif;font-size:clamp(2.6rem,5vw,5.2rem);line-height:1.08;max-width:950px;margin:18px 0}
-.hero h1 span{display:block;color:#9bc8ff}
-.hero p{font-size:1.1rem;color:#d9e7f8;max-width:800px}
-.hero-meta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0}
-.meta-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);padding:14px 18px;border-radius:10px;min-width:180px}
-.meta-card b{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#a8cbf6}
-.meta-card span{font-size:1.02rem;font-weight:700}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:7px;font-weight:700;font-size:.92rem;transition:.2s}
-.btn-primary{background:var(--gold);color:#17243b}.btn-primary:hover{transform:translateY(-2px)}
-.btn-outline{border:1px solid rgba(255,255,255,.45);color:white}
-.scroll-cue{position:absolute;right:5%;bottom:32px;color:#cbdcf1;font-size:.8rem;writing-mode:vertical-rl;letter-spacing:.13em;text-transform:uppercase}
-
-section{padding:82px 0}
-.section-tag{font-size:.75rem;font-weight:800;color:var(--blue);letter-spacing:.14em;text-transform:uppercase}
-h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2rem,3.5vw,3.2rem);line-height:1.18;margin:8px 0 20px}
-.section-lead{color:var(--muted);max-width:800px;margin-bottom:36px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start}
-.about-card{background:var(--soft);border-left:4px solid var(--gold);padding:28px;border-radius:0 12px 12px 0}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
-.stat{border:1px solid var(--line);padding:18px;border-radius:10px;background:#fff}
-.stat b{display:block;color:var(--blue);font-size:1.6rem}.stat span{font-size:.8rem;color:var(--muted)}
-
-.dark{background:var(--navy);color:#eaf2fb}.dark h2{color:white}.dark .section-tag{color:#f2c86a}
-.objective{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);display:flex;gap:16px}
-.num{color:#f4c766;font-size:1.4rem;font-weight:800}
-
-.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.topic{padding:17px;border:1px solid var(--line);border-radius:9px;background:white;font-weight:600;color:#344054}
-.topic:hover{border-color:#8fb5e5;box-shadow:0 8px 20px rgba(20,65,120,.08)}
-
-.date-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-.date-card{border:1px solid var(--line);border-radius:10px;padding:20px;background:#fff;position:relative}
-.date-card:before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:4px;background:var(--blue);border-radius:0 4px 4px 0}
-.date-card small{display:block;color:var(--muted);margin-left:10px}
-.date-card b{display:block;color:var(--navy);margin-left:10px;font-size:1rem}
-.note{margin-top:16px;padding:14px 16px;background:#fff8e7;border-left:4px solid var(--gold);font-size:.88rem;color:#66531d}
-
-.fee-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
-table{width:100%;border-collapse:collapse;background:white}
-th{background:var(--navy);color:white;text-align:left;padding:15px}
-td{padding:15px;border-top:1px solid var(--line)}
-td:last-child,th:last-child{text-align:center}.price{font-weight:800;color:var(--blue)}
-.early{display:inline-block;background:#eef6ff;color:var(--blue);padding:4px 9px;border-radius:20px;font-size:.75rem;font-weight:800}
-
-.timeline{position:relative;padding-left:28px}
-.timeline:before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:#b8cce5}
-.day{position:relative;margin-bottom:35px}.day:before{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--gold);left:-28px;top:6px}
-.day h3{color:var(--navy);margin:0 0 12px;font-size:1.25rem}
-.schedule-item{display:grid;grid-template-columns:140px 1fr;gap:15px;padding:11px 0;border-bottom:1px dashed var(--line)}
-.time{font-weight:800;color:var(--blue)}
-
-.committee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.person{border:1px solid var(--line);border-radius:12px;padding:22px;background:white;min-height:170px}
-.person .role{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:800}
-.person h4{font-family:Georgia,serif;color:var(--navy);font-size:1.18rem;margin:8px 0}
-.person p{font-size:.87rem;color:var(--muted);margin:0}
-.person.wide{grid-column:span 3}
-.person ul{columns:2;margin:10px 0 0;padding-left:20px;color:#475467;font-size:.9rem}
-.advisory{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.advisory h3{color:var(--navy);border-bottom:3px solid var(--accent);padding-bottom:9px}
-.advisory ul{list-style:none;padding:0;margin:0}.advisory li{padding:10px 0;border-bottom:1px solid var(--line)}
-
-.guidelines{display:grid;grid-template-columns:1.15fr .85fr;gap:32px}
-.guideline-list{margin:0;padding:0;list-style:none}.guideline-list li{position:relative;padding:13px 0 13px 28px;border-bottom:1px solid var(--line)}
-.guideline-list li:before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:900}
-.info-panel{background:var(--navy);color:#e8f0fa;border-radius:12px;padding:30px}.info-panel h3{color:white;margin-top:0}.info-panel ul{padding-left:18px}.info-panel li{margin:9px 0}
-.placeholder{border:1px dashed #93a4ba;color:#667085;background:#f8fafc;padding:10px 14px;border-radius:7px;font-size:.85rem}
-
-.venue{background:linear-gradient(135deg,#eef6ff,#f8fbff)}
-.venue-card{background:white;border-radius:15px;padding:34px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:25px}
-.facility{padding:13px 0;border-bottom:1px solid var(--line)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.contact{border:1px solid var(--line);padding:26px;border-radius:12px}
-.contact h3{margin:0;color:var(--navy);font-family:Georgia,serif}
-.contact .role{color:var(--blue);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
-.contact a{color:var(--blue);font-weight:600}
-
-footer{background:#061d40;color:#a9bbd3;padding:45px 0 20px}
-.footer-grid{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-.footer-title{color:white;font-weight:800;font-size:1.05rem}
-.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:25px;padding-top:18px;font-size:.8rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-
-@media(max-width:900px){
-  .nav-links{display:none}.menu-btn{display:block}
-  .grid-2,.guidelines,.venue-card,.advisory{grid-template-columns:1fr}
-  .topics{grid-template-columns:repeat(2,1fr)}
-  .committee-grid{grid-template-columns:1fr 1fr}.person.wide{grid-column:span 2}
-}
-@media(max-width:600px){
-  .topbar{font-size:.72rem}.nav{height:66px}.brand-text span{display:none}
-  .hero,.hero-inner{min-height:620px}.hero h1{font-size:2.5rem}
-  section{padding:58px 0}.topics,.committee-grid,.date-grid,.stats,.contact-grid{grid-template-columns:1fr}
-  .person.wide{grid-column:auto}.person ul{columns:1}
-  .schedule-item{grid-template-columns:1fr;gap:3px}.time{font-size:.88rem}
-  .hero-meta{display:grid;grid-template-columns:1fr}.scroll-cue{display:none}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RDAE 2027 — International Conference on Research and Developments in Aeronautical Engineering, ADCET, Ashta, Sangli, Maharashtra, India.">
+  <title>RDAE 2027 | International Conference on Research and Developments in Aeronautical Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="site-header" id="home">
+    <div class="container nav-wrap">
+      <a class="brand adcet-brand" href="#home" aria-label="ADCET home">
+        <img src="assets/adcet-logo.png" alt="ADCET logo">
+        <span>
+          <strong>ADCET</strong>
+          <small>Annasaheb Dange College<br>of Engineering &amp; Technology</small>
+          <em>Ashta, Sangli, Maharashtra, India</em>
+        </span>
+      </a>
 
-<div class="topbar">
-  <div class="container">
-    <span>Sant Dnyaneshwar Shikshan Sanstha's • Annasaheb Dange College of Engineering and Technology, Ashta</span>
-    <span>Department of Aeronautical Engineering</span>
-  </div>
-</div>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-<header>
-  <div class="container nav">
-    <a href="#home" class="brand">
-      <div class="brand-mark">RDAE</div>
-      <div class="brand-text"><strong>RDAE 2027</strong><span>International Conference</span></div>
-    </a>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#papers">Call for Papers</a>
-      <a href="#dates">Important Dates</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#committee">Committee</a>
-      <a href="#register">Register</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')">☰</button>
-  </div>
-</header>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#dates">Dates</a>
+        <a href="#cfp">CFP</a>
+        <a href="#submission">Submission</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#committee">Committee</a>
+        <a href="#venue">Venue</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<style>
-.mobile-nav{display:none;position:fixed;top:66px;left:0;right:0;background:white;border-bottom:1px solid var(--line);z-index:99;padding:15px 4%;box-shadow:0 8px 20px rgba(0,0,0,.08)}
-.mobile-nav.open{display:grid;gap:12px}
-@media(min-width:901px){.mobile-nav{display:none!important}}
-</style>
-<nav class="mobile-nav">
-  <a href="#about">About</a><a href="#papers">Call for Papers</a><a href="#dates">Important Dates</a>
-  <a href="#schedule">Schedule</a><a href="#committee">Committee</a><a href="#register">Register</a><a href="#contact">Contact</a>
-</nav>
+      <a class="brand rdae-brand" href="#home" aria-label="RDAE 2027 home">
+        <img src="assets/rdae-logo.png" alt="RDAE 2027 logo">
+      </a>
+    </div>
+  </header>
 
-<main>
-<section class="hero" id="home">
-  <div class="container hero-inner">
-    <div>
-      <div class="eyebrow">International Conference • RDAE 2027</div>
-      <h1>Research and Developments in <span>Aeronautical Engineering</span></h1>
-      <p>A platform for researchers, academicians, students and industry professionals to share original research, technical developments and emerging ideas in aeronautical engineering.</p>
-      <div class="hero-meta">
-        <div class="meta-card"><b>Conference Dates</b><span>12–13 March 2027</span></div>
-        <div class="meta-card"><b>Hosted By</b><span>ADCET, Ashta</span></div>
-        <div class="meta-card"><b>Expected Participation</b><span>50 Participants</span></div>
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">International Conference on</p>
+          <h1>Research and Developments<br>in Aeronautical Engineering<br><span>(RDAE 2027)</span></h1>
+          <div class="hero-meta">
+            <div><span class="meta-icon">▣</span><strong>12–13 March 2027</strong></div>
+            <div><span class="meta-icon">●</span><strong>ADCET, Ashta, Sangli<br>Maharashtra, India</strong></div>
+          </div>
+          <p class="hero-tagline">Connecting Research, Innovation and Industry<br>for a Sustainable Aerospace Future</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://cmt3.research.microsoft.com/RDAE2027" target="_blank" rel="noopener">Submit Paper <span>→</span></a>
+            <a class="btn btn-outline" href="#registration">Registration <span>→</span></a>
+          </div>
+        </div>
+        <div class="hero-motif" aria-hidden="true">
+          <div class="aircraft">✈</div>
+          <div class="motto">Ideas for<br><b>a Higher Tomorrow</b></div>
+        </div>
       </div>
-      <div class="btns">
-        <a class="btn btn-primary" href="#papers">Explore Call for Papers</a>
-        <a class="btn btn-outline" href="#dates">View Important Dates</a>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container two-col">
+        <div>
+          <div class="section-label"><span></span> ABOUT RDAE 2027</div>
+          <h2>Research. Innovation. Collaboration.</h2>
+          <p>The International Conference on Research and Developments in Aeronautical Engineering (RDAE 2027) aims to bring together researchers, academicians, industry professionals and students to share knowledge, present innovations and discuss emerging trends and challenges in aeronautical engineering.</p>
+          <p>RDAE 2027 provides a platform for collaboration and exchange of ideas to accelerate research, foster innovation and contribute to a sustainable aerospace future.</p>
+        </div>
+        <div class="about-image-wrap">
+          <img src="assets/adcet-campus.jpg" alt="Annasaheb Dange College of Engineering and Technology campus">
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="scroll-cue">Scroll to Explore</div>
-</section>
-
-<section id="about">
-  <div class="container grid-2">
-    <div>
-      <div class="section-tag">About the Conference</div>
-      <h2>Advancing research in aeronautical engineering</h2>
-      <p>RDAE 2027 is the International Conference on <strong>Research and Developments in Aeronautical Engineering</strong>, organized by the Department of Aeronautical Engineering at Annasaheb Dange College of Engineering and Technology, Ashta.</p>
-      <p>The conference aims to identify and promote student researchers and encourage greater participation in research in the field of Aeronautical Engineering.</p>
-      <div class="stats">
-        <div class="stat"><b>2</b><span>Conference Days</span></div>
-        <div class="stat"><b>03</b><span>Expected Keynote Speakers</span></div>
-        <div class="stat"><b>150</b><span>Seminar Hall Capacity</span></div>
+      <div class="container value-grid">
+        <article><div class="value-icon">◉</div><h3>Researchers</h3><p>Share ideas and latest research</p></article>
+        <article><div class="value-icon">✦</div><h3>Innovation</h3><p>Explore new possibilities</p></article>
+        <article><div class="value-icon">↔</div><h3>Collaboration</h3><p>Across disciplines and sectors</p></article>
+        <article><div class="value-icon">◆</div><h3>Sustainability</h3><p>For a better tomorrow</p></article>
       </div>
-    </div>
-    <div class="about-card">
-      <div class="section-tag">About ADCET</div>
-      <h3 style="font-family:Georgia,serif;color:var(--navy);font-size:1.55rem">Annasaheb Dange College of Engineering and Technology, Ashta</h3>
-      <p>ADCET, Ashta is an Autonomous Institute affiliated to Shivaji University, Kolhapur. The institute is NAAC accredited with “A++” grade, ISO 9001:2015 certified and associated with quality engineering education.</p>
-      <p>The Department of Aeronautical Engineering was established in Academic Year 2013–2014 and focuses on developing competent aeronautical engineers for aeronautical and allied industries.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="dark">
-  <div class="container grid-2">
-    <div>
-      <div class="section-tag">Objectives</div>
-      <h2>Why RDAE 2027?</h2>
-    </div>
-    <div>
-      <div class="objective"><div class="num">01</div><div>To identify and promote student researchers working in the field of Aeronautical Engineering.</div></div>
-      <div class="objective"><div class="num">02</div><div>To encourage more students to take up research in the field of Aeronautical Engineering.</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="papers">
-  <div class="container">
-    <div class="section-tag">Call for Papers</div>
-    <h2>Topics of Interest</h2>
-    <p class="section-lead">Participants from academia, R&amp;D institutions and industries are invited to submit original and unpublished research contributions in the following focus areas.</p>
-    <div class="topics">
-      <div class="topic">Low Speed Wind Tunnel Testing</div>
-      <div class="topic">Computational Fluid Dynamics</div>
-      <div class="topic">Theoretical and Computational Aeroacoustics</div>
-      <div class="topic">Lighter-Than-Air Systems</div>
-      <div class="topic">Multi-disciplinary Design Optimization of Aerospace Vehicles</div>
-      <div class="topic">Structural Analysis</div>
-      <div class="topic">Smart Materials for Aerospace Structures</div>
-      <div class="topic">Composite Materials</div>
-      <div class="topic">Structural Design &amp; Optimization</div>
-      <div class="topic">Aeroelasticity</div>
-      <div class="topic">Gas Turbine Engines</div>
-      <div class="topic">Heat Transfer</div>
-      <div class="topic">Experimental and Computational Combustion</div>
-      <div class="topic">Turbo Machinery</div>
-      <div class="topic">Electric Propulsion</div>
-      <div class="topic">Unmanned Aerial Systems</div>
-      <div class="topic">Missile Guidance and Control</div>
-      <div class="topic">Additive Manufacturing</div>
-      <div class="topic">Sustainable Development</div>
-      <div class="topic">Alternate Fuels</div>
-    </div>
-  </div>
-</section>
-
-<section id="dates" style="background:var(--soft)">
-  <div class="container">
-    <div class="section-tag">Important Dates</div>
-    <h2>Plan your submission and participation</h2>
-    <div class="date-grid">
-      <div class="date-card"><small>First Announcement of Call for Papers</small><b>03 July 2026 (Friday)</b></div>
-      <div class="date-card"><small>Deadline for Full Paper Submission</small><b>02 October 2026 (Friday)</b></div>
-      <div class="date-card"><small>Review Comments on Full Paper to Authors</small><b>25 December 2026 (Friday)</b></div>
-      <div class="date-card"><small>Registration for Conference Start Date</small><b>01 January 2027 (Friday)</b></div>
-      <div class="date-card"><small>Early Bird Registration Last Date</small><b>29 January 2027 (Friday)</b></div>
-      <div class="date-card"><small>Camera Ready Full Paper Submission</small><b>12 February 2027 (Friday)</b></div>
-      <div class="date-card"><small>Last Date for Conference Registration</small><b>12 February 2027 (Friday)</b></div>
-      <div class="date-card"><small>Conference Dates</small><b>12–13 March 2027 (Friday &amp; Saturday)</b></div>
-    </div>
-    <div class="note"><strong>Note:</strong> The uploaded planning documents and current site screenshots contain some date variations for abstract submission. The schedule above follows the Annexure II “Important Dates” table in the conference proposal.</div>
-  </div>
-</section>
-
-<section id="register">
-  <div class="container">
-    <div class="section-tag">Registration</div>
-    <h2>Registration Fee Details</h2>
-    <p class="section-lead">Registration fee details in INR as specified in the conference proposal.</p>
-    <div class="fee-wrap">
-      <table>
-        <thead><tr><th>Category</th><th>Regular (₹)</th><th>Early Bird (₹)</th></tr></thead>
-        <tbody>
-          <tr><td>UG Student</td><td class="price">800</td><td class="price">500</td></tr>
-          <tr><td>PG Student / Research Scholar</td><td class="price">1,000</td><td class="price">800</td></tr>
-          <tr><td>Academician</td><td class="price">2,000</td><td class="price">1,500</td></tr>
-          <tr><td>Industry Person</td><td class="price">3,000</td><td class="price">2,000</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin-top:16px"><span class="early">Early Bird</span> Valid till 29 January 2027 as per the conference proposal.</p>
-    <div class="placeholder">Registration and Abstract Submission Link: <strong>[TO BE INSERTED]</strong></div>
-  </div>
-</section>
-
-<section id="schedule" style="background:var(--soft)">
-  <div class="container">
-    <div class="section-tag">Tentative Schedule</div>
-    <h2>Two days of technical exchange</h2>
-    <div class="timeline">
-      <div class="day">
-        <h3>Day 1 — 12 March 2027 (Friday)</h3>
-        <div class="schedule-item"><div class="time">10:00–10:40</div><div>Conference Inauguration</div></div>
-        <div class="schedule-item"><div class="time">10:45–11:15</div><div>Keynote Talk 1</div></div>
-        <div class="schedule-item"><div class="time">11:30–13:30</div><div>Technical Session 1</div></div>
-        <div class="schedule-item"><div class="time">14:30–16:30</div><div>Technical Session 2</div></div>
-        <div class="schedule-item"><div class="time">16:30–17:30</div><div>Special Session of Technical Writing</div></div>
+    <section class="section tracks" id="tracks">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label"><span></span> CONFERENCE TRACKS</div>
+          <p>Diverse Tracks. A Common Vision for the Future.</p>
+        </div>
+        <div class="track-grid">
+          <article class="track-card"><div class="track-no">01</div><div class="track-icon">✈</div><h3>Aerodynamics, Fluid Mechanics &amp; CFD</h3><a href="#cfp">Explore topics →</a></article>
+          <article class="track-card"><div class="track-no">02</div><div class="track-icon">△</div><h3>Structures</h3><a href="#cfp">Explore topics →</a></article>
+          <article class="track-card"><div class="track-no">03</div><div class="track-icon">⬡</div><h3>Composites &amp; Advanced Materials</h3><a href="#cfp">Explore topics →</a></article>
+          <article class="track-card"><div class="track-no">04</div><div class="track-icon">◉</div><h3>Aerospace Propulsion &amp; Power Systems</h3><a href="#cfp">Explore topics →</a></article>
+          <article class="track-card"><div class="track-no">05</div><div class="track-icon">▱</div><h3>UAVs &amp; Autonomous Aerial Systems</h3><a href="#cfp">Explore topics →</a></article>
+          <article class="track-card"><div class="track-no">06</div><div class="track-icon">AI</div><h3>AI/ML &amp; Intelligent Aerospace Systems</h3><a href="#cfp">Explore topics →</a></article>
+        </div>
       </div>
-      <div class="day">
-        <h3>Day 2 — 13 March 2027 (Saturday)</h3>
-        <div class="schedule-item"><div class="time">10:00–10:30</div><div>Keynote Talk 2</div></div>
-        <div class="schedule-item"><div class="time">10:30–11:00</div><div>Keynote Talk 3</div></div>
-        <div class="schedule-item"><div class="time">11:30–13:30</div><div>Technical Session 3</div></div>
-        <div class="schedule-item"><div class="time">14:30–16:30</div><div>Technical Session 4</div></div>
-        <div class="schedule-item"><div class="time">16:30–17:30</div><div>Panel Discussion &amp; Valedictory Function</div></div>
+    </section>
+
+    <section class="section dates" id="dates">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label"><span></span> IMPORTANT DATES <small>(For Participants)</small></div>
+          <p>Mark Your Calendar</p>
+        </div>
+        <div class="timeline">
+          <div class="date-item"><div class="date-dot">01</div><strong>15 Oct 2026</strong><span>Paper Submission<br>Opens</span></div>
+          <div class="date-item"><div class="date-dot">02</div><strong>15 Dec 2026</strong><span>Paper Submission<br>Deadline</span></div>
+          <div class="date-item"><div class="date-dot">03</div><strong>10 Jan 2027</strong><span>First-Round Review<br>Completed</span></div>
+          <div class="date-item"><div class="date-dot">04</div><strong>15 Jan 2027</strong><span>Review Decision<br>Notification</span></div>
+          <div class="date-item"><div class="date-dot">05</div><strong>25 Jan 2027</strong><span>Revised Paper<br>Submission Deadline</span></div>
+          <div class="date-item"><div class="date-dot">06</div><strong>07 Feb 2027</strong><span>Final Acceptance<br>Notification</span></div>
+          <div class="date-item"><div class="date-dot">07</div><strong>15 Feb 2027</strong><span>Regular Registration<br>Deadline</span></div>
+          <div class="date-item"><div class="date-dot">08</div><strong>28 Feb 2027</strong><span>Final Registration<br>Confirmation</span></div>
+          <div class="date-item final-date"><div class="date-dot">R</div><strong>12–13 Mar 2027</strong><span>RDAE 2027<br>Conference</span></div>
+        </div>
+        <div class="date-note">Copyright form deadline: <b>15 Feb 2027</b> &nbsp;|&nbsp; Final manuscript checking: <b>20 Feb 2027</b></div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="committee">
-  <div class="container">
-    <div class="section-tag">Organising Committee</div>
-    <h2>Leadership and conference team</h2>
-    <div class="committee-grid">
-      <article class="person wide"><div class="role">Chief Patrons</div><ul><li>Hon. Shri. Annasaheb Dange — Founder &amp; Chairman, Sant Dnyaneshwar Shikshan Sanstha, Ishwarpur</li><li>Shri. Adv. Rajendra R. Dange — Secretary, Sant Dnyaneshwar Shikshan Sanstha, Ishwarpur</li><li>Shri. Vishwanath R. Dange — Joint-Secretary, Sant Dnyaneshwar Shikshan Sanstha, Ishwarpur</li></ul></article>
-      <article class="person"><div class="role">Patron</div><h4>Dr. Laxman Y. Waghmode</h4><p>Director<br>ADCET, Ashta</p></article>
-      <article class="person"><div class="role">Advisory Chairs — National</div><h4>Dr. S. Gopinath. S<br>Dr. Amol S. Dange</h4><p>Dean-Academics / Dean-RIS<br>ADCET, Ashta</p></article>
-      <article class="person"><div class="role">Advisory Chair — International</div><h4>Dr. Song-Jeng Huang</h4><p>Professor<br>National Taiwan University of Science and Technology, Taiwan</p></article>
-      <article class="person"><div class="role">Conference Chair</div><h4>Dr. Yuvaraj S.</h4><p>Professor and HoD<br>Department of Aeronautical Engineering<br>ADCET, Ashta</p></article>
-      <article class="person"><div class="role">Convener</div><h4>Dr. S. Sendhil Kumar</h4><p>Professor<br>Department of Aeronautical Engineering<br>ADCET, Ashta</p></article>
-      <article class="person"><div class="role">Co-Convener</div><h4>Mr. Yogesh B. Kumbhar</h4><p>Assistant Professor (Senior Scale)<br>Department of Aeronautical Engineering<br>ADCET, Ashta</p></article>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container advisory">
-    <div>
-      <div class="section-tag">Advisory Committee</div>
-      <h3>International</h3>
-      <ul>
-        <li>Dr. Song-Jeng Huang — Professor, NTUST, Taiwan</li>
-        <li>Dr. M. Sudherson — Post-doc., Technion, Israel</li>
-        <li>Dr. M. Vivekaandan</li>
-        <li>Mr. S. Manoj — Senior Research Engineer-I, NTU, Singapore</li>
-        <li>Dr. M. Sivakumar Mani — Post-doctoral Researcher (Nanomaterials), Dong-A University, Korea</li>
-        <li>Dr. Balamurugan Muthubutily — Research Assistant Professor, Gachon University, South Korea</li>
-      </ul>
-    </div>
-    <div>
-      <div class="section-tag">Advisory Committee</div>
-      <h3>National</h3>
-      <ul>
-        <li>Dr. N. Kishore Nath — DRDO Hyderabad</li>
-        <li>Dr. M. Senthilkumar — Professor / Production Engg., PSG College of Technology, Coimbatore</li>
-        <li>Dr. A. P. Senthil Kumar — Associate Professor / Mechanical Engg., PSG College of Technology</li>
-        <li>Dr. Karthikeyan P. — Professor, Automobile Engg., PSG College of Technology, Coimbatore</li>
-        <li>Dr. T. V. Arjunan — Professor / Mechanical Engg., Guru Ghasidas Vishwavidyalaya (Central University)</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--soft)">
-  <div class="container guidelines">
-    <div>
-      <div class="section-tag">Submission Guidelines</div>
-      <h2>Prepare your manuscript</h2>
-      <ul class="guideline-list">
-        <li>RDAE 2027 invites full-length original research contributions from engineering professionals, industries, R&amp;D organizations, academic institutions, government departments and research scholars.</li>
-        <li>Original research contributions and review articles not exceeding six pages as per the IEEE double-column format shall be submitted.</li>
-        <li>The manuscript should contribute original research ideas, developmental ideas, analysis, findings and results.</li>
-        <li>The manuscript should not have been published or be under review in journals, magazines or conference proceedings.</li>
-        <li>The corresponding author’s name, e-mail ID and affiliation of all authors should be included.</li>
-        <li>All submitted manuscripts will be sent for peer review and the corresponding author will be notified of the review outcome.</li>
-        <li>Full paper submission is through the Microsoft Conference Management Toolkit (CMT) submission portal using the author’s Microsoft CMT account.</li>
-      </ul>
-    </div>
-    <aside class="info-panel">
-      <h3>Abstract &amp; Registration Notes</h3>
-      <ul>
-        <li>Abstract submissions are expected in English.</li>
-        <li>Abstract length: maximum two printed pages.</li>
-        <li>Accepted similarity: less than or equal to 15%.</li>
-        <li>Best paper certificates will be awarded for each session.</li>
-      </ul>
-      <div class="placeholder">Microsoft CMT Submission Portal: <strong>[TO BE INSERTED]</strong></div>
-    </aside>
-  </div>
-</section>
-
-<section class="venue">
-  <div class="container">
-    <div class="section-tag">Venue &amp; Facilities</div>
-    <h2>Conference infrastructure at ADCET, Ashta</h2>
-    <div class="venue-card">
-      <div>
-        <h3 style="font-family:Georgia,serif;color:var(--navy);font-size:1.55rem;margin-top:0">Available Facilities</h3>
-        <div class="facility">Seminar Hall with 150 seating capacity</div>
-        <div class="facility">Three-star rated Guest House for accommodation of guests</div>
-        <div class="facility">Boys and Ladies Hostel for accommodation of students</div>
-        <div class="facility">Interactive Boards for presentations and audio systems</div>
+    <section class="section cfp" id="cfp">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label"><span></span> CALL FOR PAPERS</div>
+          <p>Share Your Research. Shape the Future.</p>
+        </div>
+        <div class="cfp-grid">
+          <div class="cfp-intro">
+            <h2>Contribute to RDAE 2027</h2>
+            <p>RDAE 2027 invites original research papers, review papers, case studies and industry presentations in areas of aeronautical engineering and allied fields.</p>
+            <a class="btn btn-primary" href="#submission">Paper Submission <span>→</span></a>
+          </div>
+          <div class="topics-card">
+            <h3>Topics of Interest <small>(include but not limited to)</small></h3>
+            <ul>
+              <li>Aerodynamics, Fluid Mechanics &amp; CFD</li>
+              <li>Structures</li>
+              <li>Composites &amp; Advanced Materials</li>
+              <li>Aerospace Propulsion &amp; Power Systems</li>
+              <li>UAVs &amp; Autonomous Aerial Systems</li>
+              <li>AI/ML &amp; Intelligent Aerospace Systems</li>
+              <li>And allied areas of aeronautical engineering</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 style="font-family:Georgia,serif;color:var(--navy);font-size:1.55rem;margin-top:0">Location</h3>
-        <p>Annasaheb Dange College of Engineering and Technology, Ashta, Maharashtra, India.</p>
-        <div class="placeholder">Google Maps / Campus Location Embed: <strong>[OPTIONAL PLACEHOLDER]</strong></div>
+    </section>
+
+    <section class="section submission" id="submission">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label"><span></span> PAPER SUBMISSION <small>(via Microsoft CMT)</small></div>
+          <p>Submit your full paper through Microsoft CMT.</p>
+        </div>
+        <div class="submission-grid">
+          <div class="submission-copy">
+            <h2>Submit Your Full Paper</h2>
+            <p>Authors are invited to submit their full papers through the <b>Microsoft Conference Management Toolkit (CMT)</b>. Please complete your author details carefully and upload the required paper file through the conference submission portal.</p>
+            <a class="btn btn-primary btn-large" href="https://cmt3.research.microsoft.com/RDAE2027" target="_blank" rel="noopener">Go to CMT Submission Portal <span>→</span></a>
+            <p class="small-note">The conference will use Microsoft CMT for managing the paper submission and peer-review process.</p>
+          </div>
+          <div class="steps-card">
+            <h3>How to Submit Your Paper</h3>
+            <ol>
+              <li><b>Create a CMT account</b><span>Visit <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener">cmt3.research.microsoft.com</a> and create your account.</span></li>
+              <li><b>Verify your account</b><span>Complete the email verification process.</span></li>
+              <li><b>Log in to CMT</b><span>Sign in using your verified account.</span></li>
+              <li><b>Find the conference</b><span>Click “All Conferences” and search/filter for <b>RDAE2027</b>.</span></li>
+              <li><b>Select the conference</b><span>Open “International Conference on Research and Developments in Aeronautical Engineering”.</span></li>
+              <li><b>Create a new submission</b><span>Click “Create New Submission”.</span></li>
+              <li><b>Submit your paper</b><span>Enter the required details, upload your full paper and complete the submission.</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section registration" id="registration">
+      <div class="container compact-three">
+        <div>
+          <div class="section-label"><span></span> REGISTRATION</div>
+          <h2>Registration details will be announced.</h2>
+          <p>Registration categories, fees and payment instructions will be published on this website when finalized.</p>
+          <a class="btn btn-outline-blue" href="#contact">Contact Convenor →</a>
+        </div>
+        <div class="info-panel">
+          <h3>Participant information</h3>
+          <ul><li>Paper authors</li><li>Research scholars</li><li>Students</li><li>Academicians</li><li>Industry participants</li></ul>
+        </div>
+        <div class="info-panel">
+          <h3>Conference dates</h3>
+          <div class="big-date">12–13<br><span>March 2027</span></div>
+          <p>ADCET, Ashta, Sangli, Maharashtra, India</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section placeholder-section" id="speakers">
+      <div class="container">
+        <div class="section-heading"><div class="section-label"><span></span> KEYNOTE &amp; INVITED SPEAKERS</div><p>Details will be announced.</p></div>
+        <div class="announcement"><span>◈</span><div><h3>Speaker information coming soon</h3><p>Keynote and invited speaker profiles will be published here as confirmations are finalized.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section placeholder-section" id="committee">
+      <div class="container">
+        <div class="section-heading"><div class="section-label"><span></span> COMMITTEE</div><p>Conference leadership and technical committee</p></div>
+        <div class="committee-grid">
+          <div class="committee-card"><span>01</span><h3>Conference Leadership</h3><p>Details will be announced.</p></div>
+          <div class="committee-card"><span>02</span><h3>Organizing Committee</h3><p>Details will be announced.</p></div>
+          <div class="committee-card"><span>03</span><h3>Technical Committee</h3><p>Details will be announced.</p></div>
+          <div class="committee-card"><span>04</span><h3>Track Chairs &amp; Reviewers</h3><p>Details will be announced.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section venue" id="venue">
+      <div class="container venue-grid">
+        <div>
+          <div class="section-label"><span></span> VENUE</div>
+          <h2>Annasaheb Dange College of Engineering &amp; Technology</h2>
+          <p>Ashta, Sangli, Maharashtra, India</p>
+          <img src="assets/adcet-campus.jpg" alt="ADCET campus">
+        </div>
+        <div class="quick-links">
+          <div class="section-label"><span></span> GETTING HERE</div>
+          <a href="#contact">⌖ &nbsp; How to Reach</a>
+          <a href="#contact">▣ &nbsp; Accommodation</a>
+          <a href="#contact">⌂ &nbsp; Nearby Attractions</a>
+          <a href="#contact">● &nbsp; Google Map</a>
+        </div>
+        <div class="contact-mini">
+          <div class="section-label"><span></span> CONTACT</div>
+          <h3>Convenor</h3>
+          <p>RDAE 2027<br>Department of Aeronautical Engineering<br>Annasaheb Dange College of Engineering &amp; Technology<br>Ashta, Sangli – 416 301, Maharashtra, India</p>
+          <a href="mailto:rdae@adcet.ac.in">✉ &nbsp; rdae@adcet.ac.in</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box">
+        <div>
+          <div class="section-label light"><span></span> CONTACT</div>
+          <h2>RDAE 2027 Convenor</h2>
+          <p>Department of Aeronautical Engineering<br>Annasaheb Dange College of Engineering &amp; Technology<br>Ashta, Sangli – 416 301, Maharashtra, India</p>
+        </div>
+        <a class="contact-email" href="mailto:rdae@adcet.ac.in">rdae@adcet.ac.in</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img src="assets/adcet-logo.png" alt="ADCET logo">
+        <div><strong>ADCET</strong><span>Annasaheb Dange College<br>of Engineering &amp; Technology</span><small>Ashta, Sangli, Maharashtra, India</small></div>
+      </div>
+      <div class="footer-center"><strong>RDAE 2027</strong><span>International Conference on<br>Research and Developments<br>in Aeronautical Engineering</span></div>
+      <div class="footer-nav">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#tracks">Tracks</a><a href="#dates">Dates</a><a href="#cfp">CFP</a><a href="#submission">Submission</a><a href="#committee">Committee</a><a href="#venue">Venue</a><a href="#contact">Contact</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="section-tag">Contact</div>
-    <h2>Conference Secretariat</h2>
-    <div class="contact-grid">
-      <div class="contact">
-        <div class="role">Convener</div>
-        <h3>Dr. S. Sendhil Kumar</h3>
-        <p>Professor<br>Department of Aeronautical Engineering</p>
-        <p>Email: <a href="mailto:ssk_aero@adcet.in">ssk_aero@adcet.in</a><br>Contact: <a href="tel:+919486172845">9486172845</a></p>
-      </div>
-      <div class="contact">
-        <div class="role">Co-Convener</div>
-        <h3>Mr. Yogesh B. Kumbhar</h3>
-        <p>Assistant Professor<br>Department of Aeronautical Engineering</p>
-        <p>Email: <a href="mailto:ybk_aero@adcet.in">ybk_aero@adcet.in</a><br>Contact: <a href="tel:+917058700724">7058700724</a></p>
-      </div>
+    <div class="container cmt-note">
+      The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
     </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div><div class="footer-title">RDAE 2027</div><div>International Conference on Research and Developments in Aeronautical Engineering</div></div>
-      <div><div class="footer-title">Organized by</div><div>Department of Aeronautical Engineering<br>ADCET, Ashta</div></div>
+    <div class="container footer-bottom">
+      <span>© 2027 RDAE | ADCET, Ashta. All Rights Reserved.</span>
+      <span>Privacy Policy &nbsp;|&nbsp; Terms &nbsp;|&nbsp; Sitemap</span>
     </div>
-    <div class="copyright"><span>© 2027 RDAE Conference. All rights reserved.</span><span>12–13 March 2027</span></div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.mobile-nav').classList.remove('open')));
-</script>
+  <button class="back-top" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>
