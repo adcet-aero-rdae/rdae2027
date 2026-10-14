@@ -19,12 +19,5 @@ Contact: rdae@adcet.ac.in
 
 ## Deployment
 
-The site is static and can be hosted on GitHub Pages, Cloudflare Pages, Netlify, or similar services.
+The site is static and is hosted on vercel services.
 
-### GitHub Pages
-
-1. Create a GitHub repository named `rdae2027`.
-2. Upload all files and the `assets` folder.
-3. Go to Settings → Pages.
-4. Select deployment from the main branch/root.
-5. Configure the custom domain `rdae2027.adcet.ac.in` when ADCET IT provides the DNS record.
