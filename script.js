@@ -58,26 +58,25 @@
     if (end < now) { el.classList.add('past'); el.classList.remove('key'); }
   });
 
-  /* Countdown: submission deadline, then the conference itself */
-  const cd = document.getElementById('countdown');
-  if (cd) {
-    const label = document.getElementById('countdown-label');
-    const milestones = [
-      { t: new Date('2026-12-15T23:59:59+05:30').getTime(), text: 'Paper submission closes in' },
-      { t: new Date('2027-03-12T09:00:00+05:30').getTime(), text: 'Conference begins in' }
-    ];
-    const cells = { d: cd.querySelector('[data-unit="d"]'), h: cd.querySelector('[data-unit="h"]'), m: cd.querySelector('[data-unit="m"]'), s: cd.querySelector('[data-unit="s"]') };
+  /* Countdowns (paper submission + conference) */
+  const timers = [...document.querySelectorAll('.countdown[data-target]')];
+  if (timers.length) {
     const pad = n => String(n).padStart(2, '0');
     const tick = () => {
-      const t = Date.now();
-      const next = milestones.find(m => m.t > t);
-      if (!next) { label.textContent = 'Thank you for joining RDAE 2027'; cd.hidden = true; return; }
-      label.textContent = next.text;
-      let diff = Math.floor((next.t - t) / 1000);
-      const d = Math.floor(diff / 86400); diff -= d * 86400;
-      const h = Math.floor(diff / 3600); diff -= h * 3600;
-      const m = Math.floor(diff / 60); const s = diff - m * 60;
-      cells.d.textContent = d; cells.h.textContent = pad(h); cells.m.textContent = pad(m); cells.s.textContent = pad(s);
+      const now = Date.now();
+      timers.forEach(cd => {
+        const target = new Date(cd.dataset.target).getTime();
+        let diff = Math.floor((target - now) / 1000);
+        if (diff <= 0) {
+          if (!cd.dataset.finished) { cd.dataset.finished = '1'; cd.innerHTML = `<p class="cd-done">${cd.dataset.done || ''}</p>`; }
+          return;
+        }
+        const d = Math.floor(diff / 86400); diff -= d * 86400;
+        const h = Math.floor(diff / 3600); diff -= h * 3600;
+        const m = Math.floor(diff / 60); const sec = diff - m * 60;
+        const set = (u, v) => { const el = cd.querySelector(`[data-unit="${u}"]`); if (el) el.textContent = v; };
+        set('d', d); set('h', pad(h)); set('m', pad(m)); set('s', pad(sec));
+      });
     };
     tick();
     setInterval(tick, 1000);
