@@ -10,12 +10,13 @@ Contact: rdae@adcet.ac.in
 
 ## Files
 
-- `index.html` — website
+- `index.html` — home page
+- `tracks.html` — tracks & topics page (linked from each "Explore topics")
 - `styles.css` — styling
-- `script.js` — mobile navigation, active-section highlighting, back-to-top button
+- `script.js` — mobile navigation, active-section highlighting, countdown, past-date marking, scroll reveal, back-to-top
 - `assets/adcet-logo.png` — exact ADCET logo supplied by the organizer
-- `assets/rdae-logo.png` — exact RDAE logo supplied by the organizer
-- `assets/adcet-campus.jpg` — exact ADCET campus image supplied by the organizer
+- `assets/rdae-logo.png` — RDAE logo (background removed, resized for web)
+- `assets/adcet-campus.jpg` — ADCET campus image (cropped and resized)
 
 ## Deployment
 
