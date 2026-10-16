@@ -531,3 +531,4 @@ body{font-size:16px}
 .adv-org{display:block;font-size:.84rem;color:var(--muted);margin-top:1px}
 @media (max-width:960px){.adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.adv-grid{grid-template-columns:1fr}}
+.adv-tag{display:inline-block;margin:4px 0 2px;padding:2px 9px;border-radius:99px;background:#fff1e7;color:#b8441c;font-size:.74rem;font-weight:700;letter-spacing:.02em}
