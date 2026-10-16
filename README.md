@@ -4,7 +4,7 @@ Single-page responsive conference website for:
 
 International Conference on Research and Developments in Aeronautical Engineering (RDAE 2027)
 
-Conference: 12–13 March 2027
+Conference: 12 & 13 March 2027
 Venue: Annasaheb Dange College of Engineering & Technology (ADCET), Ashta, Sangli, Maharashtra, India
 Contact: rdae@adcet.ac.in
 
@@ -12,6 +12,9 @@ Contact: rdae@adcet.ac.in
 
 - `index.html` — home page
 - `tracks.html` — tracks & topics page (linked from each "Explore topics")
+- `venue.html` — venue map, how to reach, transport gateways and nearby attractions
+- `committee.html` — conference committee (chief patrons, patron, chair, convenors, track chairs)
+- `assets/committee/` — committee member photos
 - `styles.css` — styling
 - `script.js` — mobile navigation, active-section highlighting, countdown, past-date marking, scroll reveal, back-to-top
 - `assets/adcet-logo.png` — exact ADCET logo supplied by the organizer

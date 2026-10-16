@@ -513,3 +513,21 @@ body{font-size:16px}
 .track-chair span{font-size:.8rem;color:var(--muted)}
 @media (max-width:960px){.mini-grid{grid-template-columns:1fr 1fr}.committee-row{grid-template-columns:1fr;gap:0}.tc-row{grid-template-columns:auto 1fr auto}.tc-person{grid-column:2}.tc-row .icon-arrow{grid-row:1/3;grid-column:3}}
 @media (max-width:600px){.mini-grid{grid-template-columns:1fr}.track-chair{margin-left:0;text-align:left;width:100%}}
+.mini-grid{grid-template-columns:repeat(3,1fr)}
+.mini-person small{display:block;font-size:.8rem;color:var(--muted);margin-top:1px}
+.mini-person img{width:68px;height:68px}
+@media (max-width:960px){.mini-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.mini-grid{grid-template-columns:1fr}}
+
+/* ---------- Advisory committee ---------- */
+.adv-sub{font-size:1rem;font-weight:700;color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin:-6px 0 16px}
+.adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.adv-card{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);transition:border-color .2s,box-shadow .2s}
+.adv-card:hover{border-color:var(--blue-100);box-shadow:var(--shadow-sm)}
+.adv-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--blue-50);color:var(--blue);flex-shrink:0}
+.adv-icon .icon{width:50%;height:50%}
+.adv-card b{display:block;color:var(--ink);font-size:.98rem;line-height:1.3}
+.adv-role{display:block;font-size:.86rem;color:var(--text);margin-top:2px}
+.adv-org{display:block;font-size:.84rem;color:var(--muted);margin-top:1px}
+@media (max-width:960px){.adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.adv-grid{grid-template-columns:1fr}}
