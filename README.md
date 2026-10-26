@@ -15,6 +15,7 @@ Contact: rdae@adcet.ac.in
 - `venue.html` — venue map, how to reach, transport gateways and nearby attractions
 - `committee.html` — conference committee (chief patrons, patron, chair, convenors, track chairs)
 - `assets/committee/` — committee member photos
+- `assets/aesi-logo.jpg` — Aeronautical Society of India, Pune Branch logo
 - `styles.css` — styling
 - `script.js` — mobile navigation, active-section highlighting, countdown, past-date marking, scroll reveal, back-to-top
 - `assets/adcet-logo.png` — exact ADCET logo supplied by the organizer

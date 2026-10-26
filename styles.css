@@ -532,3 +532,20 @@ body{font-size:16px}
 @media (max-width:960px){.adv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.adv-grid{grid-template-columns:1fr}}
 .adv-tag{display:inline-block;margin:4px 0 2px;padding:2px 9px;border-radius:99px;background:#fff1e7;color:#b8441c;font-size:.74rem;font-weight:700;letter-spacing:.02em}
+
+/* ---------- AeSI logo ---------- */
+.brand-aesi{margin-left:6px}
+.brand-aesi img{height:54px;width:auto;display:block}
+.assoc{display:flex;align-items:center;gap:12px;justify-content:center;margin:0 auto 16px;padding:8px 14px;border-radius:12px;background:#fff;max-width:320px}
+.assoc img{width:46px;height:auto}
+.assoc span{display:flex;flex-direction:column;text-align:left;font-size:.74rem;color:var(--muted);line-height:1.25}
+.assoc b{font-size:.84rem;color:var(--navy-800)}
+.footer-logos{flex-wrap:wrap}
+@media (max-width:960px){.brand-aesi{display:none}}
+.nav-wrap{gap:14px}
+.brand-rdae img,.brand-aesi img{height:48px}
+.brand-aesi{margin-left:0}
+.main-nav a{padding:8px 9px}
+.footer-brand{flex-direction:column;gap:14px}
+@media (max-width:1440px){.brand-text small{display:none}}
+@media (max-width:1180px){.main-nav a{padding:8px 6px;font-size:.8rem}}
