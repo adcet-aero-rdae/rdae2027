@@ -549,3 +549,5 @@ body{font-size:16px}
 .footer-brand{flex-direction:column;gap:14px}
 @media (max-width:1440px){.brand-text small{display:none}}
 @media (max-width:1180px){.main-nav a{padding:8px 6px;font-size:.8rem}}
+.committee-row.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:960px){.committee-row.three{grid-template-columns:1fr}}
