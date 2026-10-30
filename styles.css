@@ -574,3 +574,11 @@ body{font-size:16px}
 @media (max-width:1100px){.cap-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:960px){.dl-grid{grid-template-columns:1fr}}
 @media (max-width:600px){.dl-card{grid-template-columns:1fr}.dl-thumb{max-width:240px}.cap-grid{grid-template-columns:1fr}}
+
+/* ---------- ADCET brand block (header) ---------- */
+.brand-adcet{gap:12px;align-items:center}
+.brand-adcet img{width:46px;height:46px}
+.brand-text{display:flex;flex-direction:column;justify-content:center;gap:3px;padding-left:12px;border-left:2px solid var(--line)}
+.brand-text strong{font-size:1.12rem;letter-spacing:.06em;line-height:1.05}
+.brand-text small{margin-top:0;max-width:none;white-space:nowrap;font-size:.7rem;font-weight:500;letter-spacing:.01em;line-height:1.2;color:var(--muted)}
+.brand-text small .bt-line{display:block}
