@@ -551,3 +551,26 @@ body{font-size:16px}
 @media (max-width:1180px){.main-nav a{padding:8px 6px;font-size:.8rem}}
 .committee-row.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 @media (max-width:960px){.committee-row.three{grid-template-columns:1fr}}
+
+/* ---------- Downloads page ---------- */
+.dl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.dl-card{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;transition:box-shadow .25s,transform .25s}
+.dl-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.dl-thumb{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);box-shadow:var(--shadow-sm)}
+.dl-thumb img{width:100%;height:auto;display:block}
+.dl-fmt{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.dl-body h3{font-size:1.12rem;margin-bottom:6px}
+.dl-body p{font-size:.92rem;margin-bottom:16px}
+.dl-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.dl-view{font-weight:600;color:var(--blue);font-size:.92rem}
+.cap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cap-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cap-head{display:flex;flex-direction:column;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+.cap-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cap-actions .btn{padding:9px 14px;font-size:.86rem}
+.btn-whatsapp{background:#1f8f4e;color:#fff}
+.btn-whatsapp:hover{background:#18763f}
+.cap-text{margin:0;padding:16px 18px;font-family:var(--font-body);font-size:.86rem;line-height:1.55;color:var(--text);white-space:pre-wrap;word-break:break-word;max-height:320px;overflow:auto}
+@media (max-width:1100px){.cap-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:960px){.dl-grid{grid-template-columns:1fr}}
+@media (max-width:600px){.dl-card{grid-template-columns:1fr}.dl-thumb{max-width:240px}.cap-grid{grid-template-columns:1fr}}

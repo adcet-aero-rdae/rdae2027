@@ -13,8 +13,10 @@ Contact: rdae@adcet.ac.in
 - `index.html` — home page
 - `tracks.html` — tracks & topics page (linked from each "Explore topics")
 - `venue.html` — venue map, how to reach, transport gateways and nearby attractions
+- `downloads.html` — downloads & publicity: brochures, flyer, social post, paper template, share captions
 - `committee.html` — conference committee (chief patrons, patron, chair, convenors, track chairs)
 - `assets/committee/` — committee member photos
+- `assets/downloads/` — publicity files and their preview thumbnails
 - `assets/aesi-logo.jpg` — Aeronautical Society of India, Pune Branch logo
 - `styles.css` — styling
 - `script.js` — mobile navigation, active-section highlighting, countdown, past-date marking, scroll reveal, back-to-top

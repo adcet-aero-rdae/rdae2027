@@ -82,3 +82,21 @@
     setInterval(tick, 1000);
   }
 })();
+
+/* Downloads page: copy caption buttons */
+document.querySelectorAll('.cap-copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const el = document.getElementById(btn.dataset.target);
+    const label = btn.querySelector('span');
+    if (!el) return;
+    try {
+      await navigator.clipboard.writeText(el.textContent);
+    } catch (e) {
+      const r = document.createRange(); r.selectNodeContents(el);
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      document.execCommand('copy'); s.removeAllRanges();
+    }
+    label.textContent = 'Copied';
+    setTimeout(() => { label.textContent = 'Copy'; }, 2000);
+  });
+});
