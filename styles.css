@@ -584,3 +584,8 @@ body{font-size:16px}
 .brand-text small .bt-line{display:block}
 .adv-chair{margin:-8px 0 18px;font-size:.95rem;color:var(--text)}
 .adv-chair b{color:var(--ink)}
+
+/* ---------- Hybrid mode note ---------- */
+.hybrid-note{display:flex;gap:12px;align-items:flex-start;margin:0 0 24px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--blue-100);border-left:4px solid var(--blue);font-size:.95rem;color:var(--text)}
+.hybrid-note .icon{color:var(--blue);font-size:1.25rem;margin-top:2px}
+.hybrid-note b{color:var(--ink)}
